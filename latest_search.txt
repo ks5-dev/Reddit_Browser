@@ -1,1 +1,29 @@
+Saturday megathread: Share your resources!
+https://www.reddit.com/r/Python/comments/i9xcah/saturday_megathread_share_your_resources/
+10
+Found a neat resource related to Python over the past week? Looking for a resource to explain a certain topic?
 
+Use this thread to chat about and share Python resources!
+[OC] How to use Selenium and Selenium webdriver manager to login to a website with Python
+https://www.reddit.com/r/Python/comments/ia6s4i/oc_how_to_use_selenium_and_selenium_webdriver/
+719
+Hey r/Python!
+
+My last post was really well received so I am back again with another tutorial all about how to use Python to login to a website [https://www.youtube.com/watch?v=BZMVoYhA7KU](https://www.youtube.com/watch?v=BZMVoYhA7KU) with Selenium and simplifying the process by using Selenium webdriver manager
+
+As always, I hope you find it useful and if you have any questions or video tutorial requests please drop me a note in the comments.
+Gitutor: A command line app that makes Git easy
+https://v.redd.it/gwpefbmzr9h51
+13
+
+I finished my Python Ray Tracer capable of rendering refraction and thin film interference!
+https://v.redd.it/gtgkdmis3xg51
+3188
+
+Selenium Google Automation
+https://www.reddit.com/r/Python/comments/iadxay/selenium_google_automation/
+16
+So today I made a video on automating Google with Selenium basically I automated every single thing I frequently use on Chrome and made a tutorial out of it in python:  
+
+
+[https://www.youtube.com/watch?v=puf9Mhi9BcY&feature=youtu.be](https://www.youtube.com/watch?v=puf9Mhi9BcY&feature=youtu.be)

@@ -1,7 +1,25 @@
 import tkinter as tk
 import scraper
-from scraper import browse_subreddit,download_png
+from scraper import browse_subreddit,download_png,download_jpg
 import os
+
+def make_menu(w):
+    global the_menu
+    the_menu = tk.Menu(w, tearoff=0)
+    the_menu.add_command(label="Cut")
+    the_menu.add_command(label="Copy")
+    the_menu.add_command(label="Paste")
+
+def show_menu(e):
+    w = e.widget
+    the_menu.entryconfigure("Cut",
+    command=lambda: w.event_generate("<<Cut>>"))
+    the_menu.entryconfigure("Copy",
+    command=lambda: w.event_generate("<<Copy>>"))
+    the_menu.entryconfigure("Paste",
+    command=lambda: w.event_generate("<<Paste>>"))
+    the_menu.tk.call("tk_popup", the_menu, e.x_root, e.y_root)
+
 
 root = tk.Tk()
 root.geometry("1200x700")
@@ -10,7 +28,10 @@ root.geometry("1200x700")
 Handling the select subreddit button, write the content found to a file, then display it on the show content frame
 '''
 def select_subreddit(sub):
+    show_content.delete('1.0', tk.END)
     with open("latest_search.txt","w") as f:
+        f.close()
+    with open("read_comments.txt","w") as f:
         f.close()
     results = browse_subreddit(sub)
     for n in range(len(results)+1):
@@ -38,7 +59,16 @@ show_frame.place(relx = 0.07,rely=0.15,relwidth=0.85,relheight=0.7)
 show_content = tk.Text(show_frame,bg="#121212",fg="#cccccc")
 show_content.place(relheight=1,relwidth=1)
 
-get_image_resource = tk.Button(root,bg="#4700b3",text="get image resource",command=download_png)
-get_image_resource.place(relx= 0.15, rely=0.9,relwidth=0.15,relheight=0.05)
+get_png_resource = tk.Button(root,bg="#4700b3",text="get png images",command=download_png)
+get_png_resource.place(relx= 0.15, rely=0.9,relwidth=0.15,relheight=0.05)
+
+get_png_resource = tk.Button(root,bg="#4700b3",text="get jpg images",command=download_jpg)
+get_png_resource.place(relx= 0.3, rely=0.9,relwidth=0.15,relheight=0.05)
+
+make_menu(root)
+e1 = tk.Entry()
+
+e1.place(relx=0.3,relwidth=0.4)
+e1.bind_class("Entry", "<Button-3><ButtonRelease-3>", show_menu)
 
 root.mainloop()
