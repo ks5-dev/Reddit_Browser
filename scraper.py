@@ -3,11 +3,6 @@ import re
 import os
 import requests
 
-reddit = praw.Reddit(client_id='7nNFTKsHEzX_ZA', 
-                     client_secret='eeHFhV-5VrCAXdHf6U1y1_zOoQk', 
-                     user_agent='Reddit_Browser', 
-                     username='kien5S5', 
-                     password='ltkcraft555')
 
 submission_data = {"title":[],"url":[],"score":[],"body":[]}
 def browse_subreddit(sub):
